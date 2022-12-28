@@ -3,8 +3,7 @@ import StickyNote from './components/sticky';
 export default function App() {
   const [coords, setCoords] = useState({x: 0, y: 0});
 
-  const [globalCoords, setGlobalCoords] = useState({x: 0, y: 0});
-
+  
   useEffect(() => {
 
     const handleWindowMouseMove = event => {
