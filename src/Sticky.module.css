@@ -1,0 +1,61 @@
+:root{
+    --default-color:antiquewhite;
+    --pink:palevioletred;
+    --blue:paleturquoise;
+    --green:palegreen;
+    --gold:palegoldenrod;
+    --glue:rgba(0, 0, 0, 0.062);
+
+
+}
+
+.default{
+    background-color: var(--default-color);
+}
+
+.pink{
+    background-color: var(--pink);
+}
+
+.blue{
+    background-color: var(--blue);
+}
+
+.green{
+    background-color: palegreen;
+}
+
+.gold{
+    background-color: palegoldenrod;
+    
+}
+
+
+
+
+
+.sticky{
+
+    width: fit-content;
+    min-height: 200px;
+    background-color: var(--default-color);
+    box-shadow: 3px 3px 5px grey
+
+}
+
+
+.header{
+
+    height: 20px;
+    background-color: var(--glue);
+    cursor:grab
+}
+
+.TextArea{
+
+min-height: 200px;
+background-color: transparent;
+border: none;
+padding: 10px;
+
+}
