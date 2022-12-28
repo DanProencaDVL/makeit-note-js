@@ -1,2 +1,2 @@
-# Makei It Note ... Coming son
+# Make it note ... Coming son
 
