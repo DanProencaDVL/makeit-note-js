@@ -1,12 +1,12 @@
 import {useEffect, useState} from 'react';
-import StickyNote from './sticky';
+import StickyNote from './components/sticky';
 export default function App() {
   const [coords, setCoords] = useState({x: 0, y: 0});
 
   const [globalCoords, setGlobalCoords] = useState({x: 0, y: 0});
 
   useEffect(() => {
-    // 👇️ get global mouse coordinates
+
     const handleWindowMouseMove = event => {
       setGlobalCoords({
         x: event.screenX,

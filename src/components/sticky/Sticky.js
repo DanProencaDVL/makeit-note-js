@@ -3,7 +3,7 @@ import styles from './Sticky.module.css'
 
 
 
-export default class StickyNote extends React.Component {
+export class StickyNote extends React.Component {
     
     constructor(props) {
         super(props);
