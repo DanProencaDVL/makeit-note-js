@@ -49,7 +49,8 @@ export class StickyNote extends React.Component {
           }}
             onMouseUp={()=>this.state.draggable?this.setState({draggable:false,xoffset:this.props.x  - this.state.mousex, yoffset:this.props.y  - this.state.mousey}):''}
         >
-            <div className={styles.header}
+            <div 
+            className={styles.header}
             onMouseDown={()=>this.setState({draggable:true})}
             onMouseUp={()=>this.setState({draggable:false,xoffset:this.props.x  - this.state.mousex, yoffset:this.props.y  - this.state.mousey})}
             onMouseMove={this.handleMouseMove}
