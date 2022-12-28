@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useState} from 'react';
 import StickyNote from './components/sticky';
 export default function App() {
   const [coords, setCoords] = useState({x: 0, y: 0});
