@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Workspace.module.css'
 import { StickyNote } from '../sticky/Sticky';
+import StickyStyles from '../sticky/Sticky.module.css'
 
 export class WorkSpace extends React.Component {
 
@@ -60,18 +61,18 @@ export class WorkSpace extends React.Component {
 
 <div>
 
-<div className={`${styles.menuColor} ${styles.blue}`} onClick={()=>this.newNote(styles.blue)} >
+<div className={`${styles.menuColor} ${styles.blue}`} onClick={()=>this.newNote(StickyStyles.blue)} >
 </div>
 
-<div className={`${styles.menuColor} ${styles.pink}`} onClick={()=>this.newNote(styles.pink)}>
-</div>
-
-
-<div className={`${styles.menuColor} ${styles.gold}`} onClick={()=>this.newNote(styles.gold)}> 
+<div className={`${styles.menuColor} ${styles.pink}`} onClick={()=>this.newNote(StickyStyles.pink)}>
 </div>
 
 
-<div className={`${styles.menuColor} ${styles.green}`} onClick={()=>this.newNote(styles.green)}>
+<div className={`${styles.menuColor} ${styles.gold}`} onClick={()=>this.newNote(StickyStyles.gold)}> 
+</div>
+
+
+<div className={`${styles.menuColor} ${styles.green}`} onClick={()=>this.newNote(StickyStyles.green)}>
 </div>
 
 </div>
