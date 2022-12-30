@@ -13,10 +13,40 @@ export class StickyNote extends React.Component {
             yoffset:0,
             mousex:0,
             mousey:0,
-            draggable:false
+            draggable:false,
+            display:true,
         }
 
      
+      }
+
+      componentDidMount = () => {
+
+   
+
+            const offset = JSON.parse(localStorage.getItem(this.props.id))
+            console.log(offset)
+            this.setState({xoffset:offset.x, yoffset:offset.y})
+          
+
+        console.log(this.props.id)
+
+      }
+
+
+      saveOffset(){
+
+
+          localStorage.setItem(this.props.id,JSON.stringify({id:this.props.id, color:this.props.color,x:this.props.x  - this.state.mousex, y:this.props.y  - this.state.mousey}))
+          this.setState({draggable:false,xoffset:this.props.x  - this.state.mousex, yoffset:this.props.y  - this.state.mousey})
+        
+
+      }
+
+
+      destroy = ()=>{
+        this.state.display = false
+        localStorage.removeItem(this.props.id)
       }
 
 
@@ -41,29 +71,30 @@ export class StickyNote extends React.Component {
 
 
         <>
-        <div ref={this.posRef} className={styles.sticky}
+     
+        {this.state.display?<div ref={this.posRef} className={`${styles.sticky} ${this.props.color?this.props.color:styles.gold}`}
         style={{
             position: "absolute",
             left: `${this.state.draggable?this.props.x - this.state.mousex:this.state.xoffset}px`,
             top: `${this.state.draggable?this.props.y - this.state.mousey:this.state.yoffset}px`,
           }}
-            onMouseUp={()=>this.state.draggable?this.setState({draggable:false,xoffset:this.props.x  - this.state.mousex, yoffset:this.props.y  - this.state.mousey}):''}
+            onMouseUp={()=>this.state.draggable?this.saveOffset():''}
         >
             <div 
             className={styles.header}
-            onMouseDown={()=>this.setState({draggable:true})}
-            onMouseUp={()=>this.setState({draggable:false,xoffset:this.props.x  - this.state.mousex, yoffset:this.props.y  - this.state.mousey})}
-            onMouseMove={this.handleMouseMove}
+            onPointerDown={()=>this.setState({draggable:true})}
+            onPointerUp={()=>this.saveOffset()}
+            onPointerMove={this.handleMouseMove}
 
          
             >
-             
+             <span onClick={()=>this.destroy()} className={styles.close}></span>
             </div>
             
             <textarea className={styles.TextArea}>
                     
             </textarea>
-        </div>
+        </div>:''}
         </>
         
       )

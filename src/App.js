@@ -1,10 +1,9 @@
 import { useState} from 'react';
 import StickyNote from './components/sticky';
+import { WorkSpace } from './components/sticky/workspace/Workspace';
 export default function App() {
   const [coords, setCoords] = useState({x: 0, y: 0});
 
-  
-  
 
   const handleMouseMove = event => {
     setCoords({
@@ -14,8 +13,10 @@ export default function App() {
   };
 
   return (
-    <div onMouseMove={handleMouseMove} style={{display:'flex', height:'100vh'}}>
+  /*  <div onPointerMove={handleMouseMove} style={{display:'flex', height:'100vh'}}>
     <StickyNote  x={coords.x} y={coords.y }/>
-    </div>
+    </div>*/
+
+    <WorkSpace></WorkSpace>
   );
 }
