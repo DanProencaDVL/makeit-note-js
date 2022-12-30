@@ -1,8 +1,8 @@
-import { useState} from 'react';
-import StickyNote from './components/sticky';
-import { WorkSpace } from './components/sticky/workspace/Workspace';
+import { WorkSpace } from './components/workspace/Workspace';
 export default function App() {
-  const [coords, setCoords] = useState({x: 0, y: 0});
+  
+  
+/*const [coords, setCoords] = useState({x: 0, y: 0});
 
 
   const handleMouseMove = event => {
@@ -10,7 +10,7 @@ export default function App() {
       x: event.clientX - event.target.offsetLeft,
       y: event.clientY - event.target.offsetTop,
     });
-  };
+  };*/
 
   return (
   /*  <div onPointerMove={handleMouseMove} style={{display:'flex', height:'100vh'}}>

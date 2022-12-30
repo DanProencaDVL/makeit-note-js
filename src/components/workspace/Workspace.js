@@ -1,6 +1,6 @@
-import React,{ useState} from 'react';
+import React from 'react';
 import styles from './Workspace.module.css'
-import { StickyNote } from '../Sticky';
+import { StickyNote } from '../sticky/Sticky';
 
 export class WorkSpace extends React.Component {
 
