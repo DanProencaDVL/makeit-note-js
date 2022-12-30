@@ -56,6 +56,7 @@ min-height: 200px;
 background-color: transparent;
 border: none;
 padding: 10px;
+font-size: large;
 
 }
 
@@ -70,3 +71,10 @@ padding: 10px;
     margin: 4px;
 
 }
+
+.sticky:active{
+
+    z-index: 10;
+}
+
+

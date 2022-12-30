@@ -43,7 +43,7 @@ export class WorkSpace extends React.Component {
 
         let aux = this.state.stickNotes
         aux.push({color:color, id:Date.now()})
-        localStorage.setItem(Date.now(),JSON.stringify({id:Date.now(), color:color, x:0, y:0}))
+        localStorage.setItem(Date.now(),JSON.stringify({id:Date.now(), color:color, x:80, y:0}))
         return
     }
 

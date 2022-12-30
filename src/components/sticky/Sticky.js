@@ -10,7 +10,7 @@ export class StickyNote extends React.Component {
         this.posRef = React.createRef();
         this.state = {
             xoffset:0,
-            yoffset:0,
+            yoffset:80,
             mousex:0,
             mousey:0,
             draggable:false,
@@ -26,7 +26,7 @@ export class StickyNote extends React.Component {
 
             const offset = JSON.parse(localStorage.getItem(this.props.id))
             console.log(offset)
-            this.setState({xoffset:offset.x, yoffset:offset.y})
+            this.setState({xoffset:offset.x, yoffset:offset.y, text:offset.text})
           
 
         console.log(this.props.id)
@@ -43,6 +43,20 @@ export class StickyNote extends React.Component {
 
       }
 
+      saveText(text){
+
+        const savedState = JSON.parse(localStorage.getItem(this.props.id))
+
+        localStorage.setItem(this.props.id, JSON.stringify({...savedState, text:text}))
+
+      }
+
+      getText = ()=>{
+
+        const text = JSON.parse(localStorage.getItem(this.props.id)).text?JSON.parse(localStorage.getItem(this.props.id)).text:null
+        return text
+
+      }
 
       destroy = ()=>{
         this.setState({display:false})
@@ -91,8 +105,8 @@ export class StickyNote extends React.Component {
              <span onClick={()=>this.destroy()} className={styles.close}></span>
             </div>
             
-            <textarea className={styles.TextArea}>
-                    
+            <textarea  className={styles.TextArea} onChange={(e)=>this.saveText(e.target.value)}>
+                    {this.getText()}
             </textarea>
         </div>:''}
         </>
