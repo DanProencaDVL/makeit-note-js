@@ -45,7 +45,7 @@ export class StickyNote extends React.Component {
 
 
       destroy = ()=>{
-        this.state.display = false
+        this.setState({display:false})
         localStorage.removeItem(this.props.id)
       }
 
