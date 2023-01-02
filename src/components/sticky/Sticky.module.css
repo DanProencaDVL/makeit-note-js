@@ -32,13 +32,10 @@
 
 
 
-
-
 .sticky{
 
     width: fit-content;
     min-height: 200px;
-    background-color: var(--default-color);
     box-shadow: 3px 3px 5px grey
 
 }
@@ -48,7 +45,9 @@
 
     height: 20px;
     background-color: var(--glue);
-    cursor:grab
+    cursor:grab;
+    display: flex;
+    
 }
 
 .TextArea{
@@ -57,5 +56,25 @@ min-height: 200px;
 background-color: transparent;
 border: none;
 padding: 10px;
+font-size: large;
 
 }
+
+.close{
+
+    cursor: pointer;
+    background: #c90e00;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    padding: 2px;
+    margin: 4px;
+
+}
+
+.sticky:active{
+
+    z-index: 10;
+}
+
+
